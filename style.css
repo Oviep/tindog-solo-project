@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  /* max-width: 600px; */
+}
+
+.header-profile {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.55em 1.125em;
+  width: 100%;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.chat-icon-container {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.paw-icon {
+  width: 22%;
+}
+
+.paw-icon-div {
+  background: linear-gradient(to right, #fa695a, #f83375);
+  padding: 0.625em 0.685em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  border-radius: 45%;
+  margin-top: -1em;
+}
+
+.icons {
+  width: 30%;
+}
+.profile-container {
+ margin: 0 0.5em;
+}
+
+.profile-img {
+  width: 100%;
+  height: 85vh;
+  /* margin-left: 0.5em; */
+
+  border-radius:4px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color:white;
+  line-height: 2; */
+  
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin:1em 0.1em -0.5em 1.2em ;
+  color:white;
+ 
+}
+
+.profile-message {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 1.6em;
+  margin-top: 0.437em;
+  color:#B7B7B7;
+
+}
+.profile {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 4px;
+  left: -14px;
+}
+
+
+
+.container-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 1.5em;
+  gap: 1.8rem;
+}
+
+.like-container-btn, .nope-container-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.562em;
+  border-radius:50%;
+  box-shadow: 0 0 20px 0 rgba(0,0, 0, 0.2);
+}
+
+.like-container-btn:hover {
+  background:#dbfff4;
+   box-shadow: 0 0 20px 5px rgba(219,255, 244);
+}
+
+.nope-container-btn:hover {
+  background:#ffe7ef;
+   box-shadow: 0 0 20px 5px rgba(255,231, 239);
+}
+
+.decision-button {
+  width: 3.75rem;
+}
+
+.decision-img {
+  display: none;
+  grid-template: 1fr 1fr/1fr 1fr;
+  position: absolute;
+  top: 0;
+  transform: rotate(-40deg);
+  margin-left: 1.5em;
+}
+
+.like-img, .nope-img {
+  width: 250px;
+}
+
+.like-img {
+  margin-top:60px ;
+  margin-left: 30px;
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+.nope-img {
+ margin-top: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+
