@@ -37,7 +37,6 @@ function likedProfile() {
 function dislikedProfile() {
 
       if(dogData.length > 0) {
-              dogProfile.
               document.querySelector(".decision-img").style.display = "grid";
               document.querySelector(".like-img").style.display = "none";
               setTimeout(() => {
