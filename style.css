@@ -145,3 +145,16 @@ body {
   grid-row: 1;
 }
 
+.end-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  color: gold;
+
+}
+
+.end-message {
+  font-size: 2rem;
+}
+

@@ -10,9 +10,9 @@ class DogProfiles {
         
     }
 
-    isSwiped() {
-        this.hasBeenSwiped = 
-        this.hasBeenLiked = true
+    isSwiped(bool) {
+        this.hasBeenSwiped = true
+        this.hasBeenLiked = bool
     }
 
     getProfileHtml() {

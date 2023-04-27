@@ -3,49 +3,63 @@ import Profiles from "./profile_class.js";
 
 const likeBtn = document.querySelector("#like-btn")
 const dislikeBtn = document.querySelector("#nope-btn")
+// let dogIndex = 0
+// let currentDogProfile = new Profiles(dogData[dogIndex])
 
-// dogData[0].hasBeenLiked = true
-//  console.log(!dogData[0].hasBeenLiked)
 function getNewProfile() {
    const nextDogProfile = dogData.shift();
    return nextDogProfile ? new Profiles(nextDogProfile) : []
 }
 
+// function getDogProfile() {
+//     dogIndex++
+//     currentDogProfile = new Profiles(dogData[dogIndex])
+//     render()
+// }
+
 function likedProfile() {
 
-    if (!dogProfile.hasBeenLiked && !dogProfile.hasBeenSwiped) {
-         document.querySelector(".decision-img").style.display = "grid";
-         document.querySelector(".nope-img").style.display = "none";
-         setTimeout(() => {
-           dogProfile = getNewProfile();
-           return render();
-         }, 1500); 
-     
-    } else {
-        noMoreProfiles()
-    }
-
-    
-}
+        if(dogData.length > 0) {
+             dogProfile.isSwiped(true);
+             document.querySelector(".decision-img").style.display = "grid";
+             document.querySelector(".nope-img").style.display = "none";
+             setTimeout(() => {
+               dogProfile = getNewProfile();
+               return render();
+             }, 1500); 
+        } else {
+          setTimeout(() => noMoreProfiles(), 2000)
+        }
+        
+        // getDogProfile()
+      }
 
 function dislikedProfile() {
-    //   if(dogProfile.hasBeenSwiped)
-    document.querySelector(".decision-img").style.display = "grid";
-    document.querySelector(".like-img").style.display = "none";
-    setTimeout(() => {
-            dogProfile = getNewProfile()
-             render()
-    }, 1500)
-  setTimeout(() => {
-    noMoreProfiles();
-  }, 3000) 
+
+      if(dogData.length > 0) {
+              dogProfile.
+              document.querySelector(".decision-img").style.display = "grid";
+              document.querySelector(".like-img").style.display = "none";
+              setTimeout(() => {
+                dogProfile = getNewProfile();
+                render();
+              }, 1500);
+       }     
+       else {
+      setTimeout(() => {
+        noMoreProfiles();
+      }, 3000); 
+  }
+  
+  
 
 }
 
 function noMoreProfiles() {
   const endMessage =  document.querySelector("#profile-container").innerHTML = `
         <div class="end-message-container">
-        <p class="end-message"> There are no more profiles in your area</p>
+        <p class="end-message"> There are no more profiles in your area. Check back
+          later.</p>
     </div>`
     return endMessage
 }
@@ -57,7 +71,8 @@ dislikeBtn.addEventListener('click', dislikedProfile)
 // const rex = new Profiles(dogData[0])
 
 function render() {
-document.getElementById("profile").innerHTML = dogProfile.getProfileHtml();
+ document.getElementById("profile").innerHTML = dogProfile.getProfileHtml();
+// document.querySelector("#profile").innerHTML = currentDogProfile.getProfileHtml()
 }
 
 let dogProfile = getNewProfile()
